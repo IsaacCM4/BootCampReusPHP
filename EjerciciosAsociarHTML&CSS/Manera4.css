@@ -1,0 +1,11 @@
+h1{
+    font-size: 40px;
+    color: red;
+    font-family:Impact, 'Arial Narrow Bold', sans-serif
+}
+
+p{
+    color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+}
