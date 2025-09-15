@@ -1,0 +1,21 @@
+html{
+    background-color:burlywood
+}
+
+#titulo1 span:hover{
+    color: green;
+}
+
+#titulo1 span{
+    color: red;
+}
+
+p{
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 2px groove red;
+}
+p::selection{
+    background-color: aqua;
+    color:white;
+}
