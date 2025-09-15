@@ -1,0 +1,21 @@
+html{
+    background-color: burlywood;
+}
+.div{
+  margin-left:650px;
+  margin-top: 50px;
+  width: 200px;
+  background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+#div1{
+   text-align: left; 
+}
+#div2{
+   text-align: center; 
+}
+#div3{
+   text-align:right; 
+}
+
