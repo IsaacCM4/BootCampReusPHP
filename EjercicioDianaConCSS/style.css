@@ -1,0 +1,137 @@
+
+#marco1{
+    background-color: gray;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 550px;
+    border-radius: 100%;
+    box-shadow: 40px 15px darkslategray;
+}
+
+#marco2{
+    background-color: white;
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    top: 60px;
+    left: 560px;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+#marco3{
+    background-color: red;
+    width: 340px;
+    height: 340px;
+    position: absolute;
+    top: 80px;
+    left: 580px;
+    border-radius: 100%;
+    z-index: 2;
+}
+ #marco4{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+#marco5{
+    background-color: red;
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    top: 115px;
+    left: 615px;
+    border-radius: 100%;
+    z-index: 4;
+}
+
+#marco6{
+    background-color: white;
+    width: 235px;
+    height: 235px;
+    position: absolute;
+    top: 132px;
+    left: 633px;
+    border-radius: 100%;
+    z-index: 5;
+}
+
+#marco7{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 150px;
+    left: 650px;
+    border-radius: 100%;
+    z-index: 6;
+}
+
+#marco8{
+    background-color: white;
+    width: 165px;
+    height: 165px;
+    position: absolute;
+    top: 168px;
+    left: 668px;
+    border-radius: 100%;
+    z-index: 8;
+}
+#marco9{
+    background-color: red;
+     /* background-image: url("img.jpg");
+     background-size: cover; */
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    border-radius: 100%;
+    z-index: 9;
+}
+
+#marco10{
+
+     background-image: url("img.jpg");
+     background-size: cover;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 215px;
+    left: 715px;
+    border-radius: 100%;
+    z-index: 9;
+}
+
+#linea1{
+    width: 400px;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    top: 250px;
+    left: 550px;
+    z-index: 9;
+}
+
+#linea2{
+    width: 2px;
+    height: 400px;
+    position: absolute;
+    background-color: black;
+    top: 50px;
+    left: 750px;
+    z-index: 9;
+}
+
+
+
+
+
