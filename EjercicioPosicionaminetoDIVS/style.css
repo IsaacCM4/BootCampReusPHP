@@ -1,0 +1,41 @@
+#divCentral{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border: solid black 2px;
+}
+
+.divNum{
+    background-color: yellowgreen;
+    border-radius: 100%;
+    border: solid 2px black;
+    text-align: center;
+    width: 20px;
+}
+
+#div1{
+    position: absolute;
+    left: 27px;
+    top: 20px
+}
+
+
+#div2{
+    position: absolute;
+    left: 329px;
+    top: 20px
+}
+
+#div3{
+    position: absolute;
+    left: 27px;
+    top: 320px;
+}
+
+#div4{
+    position: absolute;
+    left: 329px;
+    top: 320px;
+}
