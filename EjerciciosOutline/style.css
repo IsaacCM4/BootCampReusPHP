@@ -1,0 +1,12 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    outline: green dotted 3dvi;
+
+
+}
+
+div:hover{
+    outline: black dotted 10px;
+}
