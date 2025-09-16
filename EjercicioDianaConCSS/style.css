@@ -108,7 +108,7 @@
     top: 215px;
     left: 715px;
     border-radius: 100%;
-    z-index: 9;
+    z-index: 10;
 }
 
 #linea1{
@@ -118,7 +118,7 @@
     background-color: black;
     top: 250px;
     left: 550px;
-    z-index: 9;
+    z-index: 11;
 }
 
 #linea2{
@@ -128,7 +128,7 @@
     background-color: black;
     top: 50px;
     left: 750px;
-    z-index: 9;
+    z-index: 12;
 }
 
 
