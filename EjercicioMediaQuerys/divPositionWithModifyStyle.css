@@ -1,0 +1,136 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.orange{
+    background-color: orange;
+}
+
+.green{
+    background-color: yellowgreen;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.gray{
+    background-color: rgb(200, 200, 200);
+}
+.div{
+    width: 20px;
+    height: 20px;
+    border: solid 2px white;
+}
+
+@media(max-width:320px){
+    
+    .orange{
+        width: 100vw;
+        height: 6vh;
+    }
+
+    .green{
+        width: 100vw;
+        margin-top: 10px;
+        height: 10vh;
+    }
+
+    .blue{
+        width: 100vw;
+        height: 20vh;
+    }
+
+    #div7{
+        width: 100vw;
+        height: 8vh;
+        margin-top: 10px;
+    }
+
+    #div8, #div9, #div10{
+        display: none;
+    }
+}
+
+@media(min-width:320px) and (max-width:768px){
+    .orange{
+        width: 100vw;
+        height: 5vh;
+    }
+
+    .green{
+        width: 100vw;
+        height: 33vh;
+    }
+
+    .blue{
+        width: 100vw;
+        height: 10vh;
+    }
+
+    .gray{
+        width: 49vw;
+        height: 10vh;
+    }
+    
+    #div7{
+        float: left;
+    }
+    #div8{
+        float: right;
+    }
+    
+    #div9{
+        float: left;
+        clear: both;
+    }
+
+    #div10{
+        float: right;
+       
+    }
+}
+
+@media(min-width:768px){
+    .orange{
+        width: 49vw;
+        height: 15vh;
+    }
+
+    #div1{
+        float: left;
+        margin-bottom: 20px;
+    }
+    #div2{
+        float: right;
+         margin-bottom: 20px;
+    }
+
+    .green{
+        margin-top: 1px;
+        width: 100vw;
+        height: 30vh;
+        clear: both;
+    }
+
+    .blue{
+        width: 33vw;
+        height: 20vh;
+        float: left;
+
+    }
+
+    .gray{
+        margin-top: 20px;
+        width: 24.5vw;
+        height: 15vh;
+        float:left;
+    }
+
+   
+
+    
+
+
+}

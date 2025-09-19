@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.green{
+    background-color: greenyellow
+}
+
+.blue{
+    background-color: blue;
+}
+
+.gray{
+    background-color: gray;
+}
+
+@media(min-width:1024px){
+    .orange{
+        width: 48vw;
+        height: 20vh;
+        display: inline-block;
+        text-align: center;
+        margin: 10px 0.5vw;
+       
+    }
+
+    .green{
+        width: 98.7vw;
+        height: 30vh;
+        margin-left: 7px;
+        margin-right: 10px;
+    }
+
+    .containerblue{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .blue{
+        width: 30vh;
+        height: 30vh;
+        margin-left: 10vh;
+        margin-top: 20px;
+    }
+    .containergray{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .gray{
+        width: 15vh;
+        height: 15vh;
+        margin: 15px;
+    }
+
+}
