@@ -1,0 +1,29 @@
+HTML,
+body {
+  margin: 0;
+  background-color: black;
+}
+
+@media (min-width: 1440px) {
+  #navBar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #logoSpotify {
+    width: 200px;
+    padding-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #navBarSpotifyLinks{
+    background-color: aqua;
+    width: 40vw;
+    align-items: center;
+  }
+  .linkNavBar {
+    font-size: 30px;
+  }
+}
