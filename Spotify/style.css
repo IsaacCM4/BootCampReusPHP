@@ -1,29 +1,243 @@
 HTML,
 body {
   margin: 0;
-  background-color: black;
+  padding: 0;
+}
+/*CSS de Navbar*/
+#navBar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#logoSpotify {
+  width: 100px;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.linkNavBar {
+  font-size: clamp(10px, 2.5vw, 36px);
+  text-decoration: none;
+  color: black;
+}
+
+#navBarSpotifyLinks {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*Div principal de imagen de presentación*/
+#musicForEveryone {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#imgMusicForEveryone {
+  width: 100%;
+}
+
+#textoMusicForEveryone {
+  position: absolute;
+  top: 40%;
+  left: 48.7%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5vw;
+}
+
+#descripcionMusicForEveryone {
+  position: absolute;
+  top: 50%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2vw;
+}
+/*CSS para What's on spotify*/
+
+#whatsOnSpotify {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#whatsSpotifyH2 {
+  border-bottom: 3px solid #1db954;
+  font-size: clamp(10px, 3vw, 36px);
+}
+#divSpotifyThings {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+.spotifyThings {
+  width: 33%;
+}
+.thingsIcon {
+  padding: 0;
+  width: 20%;
+}
+#whatsSpotifyH3 {
+  color: #1db954;
+  font-size: clamp(10px, 3vw, 36px);
+  padding-top: 0;
+}
+
+.whatsSpotifyTEXT {
+  font-size: 1.5vw;
+  margin-top: 0px;
+}
+/*Parte final de la pagina web*/
+#divFinalPart {
+  background-color: rgb(10, 184, 80);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#kenyWestTitle {
+  color: white;
+  margin-left: 4.5%;
+  font-size: clamp(10px, 4vw, 36px);
+  border-bottom: 4px solid white;
+  width: 48%;
+}
+
+#divFinalContenido {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+
+#divFinalOptions {
+  height: 100%;
+  width: 30%;
+  text-align: left;
+  color: white;
+  h3 {
+    font-size: clamp(10px, 3vw, 36px);
+    margin-left: 10%;
+  }
+
+  p {
+    font-size: clamp(10px, 1.5vw, 36px);
+    margin-left: 10%;
+  }
+}
+
+#spotifyIcon {
+  height: 30vh;
+  width: 30%;
+}
+#spotifyIconWhite {
+  width: 30%;
+  padding-top: 50%;
+  margin-left: -40%;
+}
+
+#kanyeWestImg {
+  height: 80vh;
+  width: 25%;
+  margin-right: 10%;
+}
+#spotifyApp {
+  width: 90%;
+  height: 100%;
 }
 
 @media (min-width: 1440px) {
-  #navBar {
-    background-color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+}
+
+@media (max-width: 768px) {
+  /*NavBar*/
+  #navBarSpotifyLinks {
     display: flex;
-    justify-content: space-between;
-  }
-
-  #logoSpotify {
-    width: 200px;
-    padding-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #navBarSpotifyLinks{
-    background-color: aqua;
     width: 40vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  #navBar {
+    flex-direction: column;
     align-items: center;
   }
-  .linkNavBar {
-    font-size: 30px;
+
+  /*CSS para imagen de presentacion musicForEveryone*/
+  #descripcionMusicForEveryone {
+    position: absolute;
+    top: 51%;
+    left: 49.2%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2vw;
+  }
+  /*CSS para Spotify Things*/
+
+  #divSpotifyThings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .spotifyThings {
+    width: 100%;
+  }
+
+  /*Parte final de la pagina web*/
+  #divFinalPart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #divFinalContenido {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #divFinalOptions {
+    text-align: center;
+    color: white;
+    h3 {
+      font-size: clamp(10px, 3vw, 36px);
+    }
+
+    p {
+      font-size: clamp(10px, 1.5vw, 36px);
+    }
+  }
+
+  #spotifyIcon {
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 40%;
+    margin-bottom: 5%;
+  }
+  #spotifyIconWhite {
+    width: 20%;
+  }
+
+  #kanyeWestImg {
+    height: 80vh;
+    width: 100%;
+  }
+  #spotifyApp {
+    width: 50%;
+    height: 90%;
+    padding-left: 10%;
   }
 }
