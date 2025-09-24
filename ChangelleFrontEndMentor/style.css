@@ -1,0 +1,82 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#general {
+  display: flex;
+  justify-items: center;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+img {
+  width: 50px;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+h2 {
+  color: white;
+  margin-left: 5%;
+  font-size: 50px;
+}
+p {
+  color: white;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 30%;
+}
+button {
+  text-align: left;
+  margin-top: 5%;
+  margin-left: 5%;
+  border-radius: 20%;
+  color: black;
+  padding: 12px 24px;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#div1 {
+  background-color: orange;
+  border-left: 1px;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-top-left-radius: 2%;
+  border-bottom-left-radius: 2%;
+  width: 30vw;
+  button{
+    color: orange
+  }
+}
+
+#div2 {
+  background-color: rgb(23, 152, 152);
+  width: 30vw;
+
+  button{
+    color: rgb(23, 152, 152);
+  }
+}
+
+#div3 {
+  background-color: rgb(7, 84, 84);
+  border-right: 1px;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-top-right-radius: 2%;
+  border-bottom-right-radius: 2%;
+  width: 30vw;
+
+  button{
+    color:  rgb(7, 84, 84);
+  }
+}
