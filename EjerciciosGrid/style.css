@@ -1,0 +1,139 @@
+HTML,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#divHeader {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#divMenu {
+  background-color: rgb(226, 67, 67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#divHero {
+  background-color: rgb(100, 100, 246);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#divMain {
+  background-color: rgb(52, 49, 63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#divBanner {
+  background-color: rgb(225, 225, 64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#divExtra {
+  background-color: rgb(108, 204, 108);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#divImage {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@media (max-width: 425px) {
+  #general {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr 1fr;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  #general {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 2fr 2fr;
+    height: 100vh;
+  }
+
+  #divHeader {
+    grid-column: span 4;
+  }
+
+  #divHero {
+    grid-column: span 4;
+    grid-row-start: 2;
+  }
+
+  #divMenu {
+    grid-row-start: 3;
+    grid-row-end: 6;
+  }
+
+  #divMain {
+    grid-column: span 3;
+  }
+
+  #divBanner {
+    grid-column: span 3;
+  }
+}
+
+@media(min-width: 768px){
+   #general{
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
+    grid-template-rows: 60px 400px 200px 100px 80px;
+   }
+
+   #divMenu{
+    grid-column-start: 2;
+    grid-column-end: 5;
+   }
+   #divHero{
+    grid-column: span 4;
+   }
+
+   #divMain{
+    grid-column: span 2 ;
+    grid-row: span 2;
+    grid-row-start: 3;
+    grid-row-end: 5;
+   }
+#divBanner{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+#divExtra{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+}
+   #divImage{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+}
+}
