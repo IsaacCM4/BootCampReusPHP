@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle de colores</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .rojo {
+            color: red;
+        }
+        .azul {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="parrafo1">Este párrafo cambiará al color rojo</p>
+    <button id="btnRojo">Puslame!</button>
+
+    <p id="parrafo2">Este párrafo cambiará al color azul</p>
+    <button id="btnAzul">Puslame!</button>
+
+    <script>
+
+        $(document).ready(function() {
+            $("#btnRojo").click(function() {
+                $("#parrafo1").toggleClass("rojo");
+            });
+        });
+
+     
+        const btnAzul = document.getElementById("btnAzul");
+        const parrafo2 = document.getElementById("parrafo2");
+
+        btnAzul.addEventListener("click", function() {
+            parrafo2.classList.toggle("azul");
+        });
+    </script>
+</body>
+</html>
