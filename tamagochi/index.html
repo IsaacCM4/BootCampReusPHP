@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamagochi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="general">
+      <div id="eat">
+        <div id="statsFood">
+          <div class="barra" id="foodBar">
+            <div class="progreso" id="comida">
+              <span id="foodText">Hambre: 70%</span>
+            </div>
+          </div>
+          <img src="./imgtamagochi/zanahoria.png" alt="" id="zanahoriaImg" />
+          <p id="cantidadZanahorias">x4</p>
+          <img src="./imgtamagochi/regadora.png" alt="" id="regadoraImg" />
+          <p id="cantidadRegadoras">x2</p>
+        </div>
+        <div id="panelControlComida">
+          <div id="campoZanahorias">
+            <img
+              src="./imgtamagochi/zanahoriasPequeñas.png"
+              alt=""
+              id="campoZanahoriasImg"
+            />
+            <div id="botonesAccionHuerto">
+              <button class="pixel-btn" id="btn-recoger">Recoger</button>
+              <button class="pixel-btn" id="btn-regar">Regar</button>
+            </div>
+          </div>
+
+          <div id="controlesComida">
+            <button class="pixel-btn" id="btn-alimentar">Alimentar</button>
+            <button class="pixel-btn">Comprar zanahorias</button>
+            <button class="pixel-btn">Comprar regadoras</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="play">
+        <div id="statsFun">
+          <div class="barra" id="funBar">
+            <div class="progreso" id="diversion">
+              <span id="funText">Diversión: 70%</span>
+            </div>
+          </div>
+           <img src="./imgtamagochi/moneda.png" alt="" id="monedaImg"> <p id="cantidadMonedas">x20</p>
+        </div>
+      </div>
+      <div id="fight"></div>
+      <div id="sleep"></div>
+      <img
+        id="tamagochi-gif"
+        src="imgtamagochi/gifGatito.gif"
+        alt="Tamagochi"
+      />
+    </div>
+    <div class="barra" id="xpBar">
+      <div class="progreso" id="xp"></div>
+    </div>
+     <script src="tamagochi.js"></script>
+  </body>
+</html>

@@ -1,0 +1,258 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#general {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+#eat {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  min-width: 50%;
+  height: 50%;
+  background-color: rgb(93, 237, 93);
+}
+
+#play {
+    display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  max-width: 50%;
+  height: 50%;
+  background-color: rgb(237, 232, 93);
+}
+
+#fight {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(236, 91, 91);
+}
+
+#sleep {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(55, 192, 210);
+}
+
+#tamagochi-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: auto;
+  z-index: 10;
+}
+
+.barra {
+  width: 250px;
+  height: 25px;
+  background-color: #222;
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #000;
+  position: relative; 
+}
+
+.progreso {
+  width: 0%; /* se actualizará con JS */
+  height: 100%;
+  background-color: rgb(93, 237, 93);
+  transition: width 0.3s;
+  border-radius: 5px 0 0 5px;
+}
+
+#xpBar {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#xp {
+  width: 70%;
+  height: 100%;
+}
+
+/*Campo de zanahoria y controles*/
+#foodBar {
+  width: 100%;
+  text-align: center;   
+  top: 50%;
+  margin-left: 10px;
+  margin-bottom: auto;
+  transform: translateY(-50%);
+  pointer-events: none; /* evita que interfiera con clicks */
+  font-weight: bold;
+  color: #000;
+}
+
+#comida {
+   width: 0%; 
+  height: 100%;
+  background-color: rgb(93, 237, 93);
+  transition: width 0.3s;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+
+#foodText {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: none; /* para que no interfiera con clicks */
+}
+
+#statsFood {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  gap: 20px;
+  align-items: center;
+}
+
+#zanahoriaImg {
+  margin-left: 10%;
+  height: 100%;
+}
+
+#regadoraImg {
+  margin-left: 10%;
+  height: 100%;
+}
+#panelControlComida {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 90%;
+}
+#campoZanahorias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+#campoZanahoriasImg {
+  width: 60%;
+  height: 70%;
+}
+#botonesAccionHuerto {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+#controlesComida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+}
+
+.pixel-btn {
+  width: 30%;
+  font-size: 10px;
+  color: #fff;
+  background-color: #c97c2e; /* color tierra/naranja */
+  border: 4px solid #7b4b1f; /* borde marrón oscuro */
+  padding: 12px 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  /* efecto pixel art */
+  image-rendering: pixelated;
+  box-shadow: 0 4px 0 #7b4b1f, /* sombra inferior */ 0 0 0 4px #7b4b1f,
+    /* borde exterior grueso */ 0 0 0 8px #3d2813; /* contorno extra oscuro */
+  transition: all 0.1s ease;
+}
+
+.pixel-btn:active {
+  box-shadow: 0 2px 0 #7b4b1f, 0 0 0 4px #7b4b1f, 0 0 0 8px #3d2813;
+  transform: translateY(2px); /* efecto de pulsar */
+  background-color: #a56623;
+}
+
+/*Campo de juegos*/
+
+#funBar {
+   width: 100%;
+  text-align: center;   
+  top: 50%;
+  margin-left: 10px;
+  margin-bottom: auto;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-weight: bold;
+  color: #000;
+}
+
+#diversion {
+  width: 0%; 
+  height: 100%;
+  background-color: rgb(93, 237, 93);
+  transition: width 0.3s;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+#funText{
+    position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: none; 
+}
+#statsFun{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  gap: 20px;
+  align-items: center;
+}
+#monedaImg{
+    width: 5%;
+}
+
+#cantidadMonedas{
+    margin-right: 10px;
+}
