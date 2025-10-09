@@ -35,33 +35,82 @@
 
           <div id="controlesComida">
             <button class="pixel-btn" id="btn-alimentar">Alimentar</button>
-            <button class="pixel-btn">Comprar zanahorias</button>
-            <button class="pixel-btn">Comprar regadoras</button>
+            <button class="pixel-btn" id="btn-comprarZanahoria">
+              Comprar zanahorias
+            </button>
+            <button class="pixel-btn" id="btn-comprarRegadora">
+              Comprar regadoras
+            </button>
           </div>
         </div>
       </div>
 
+      <!-- SECCIÓN: JUEGOS -->
       <div id="play">
         <div id="statsFun">
           <div class="barra" id="funBar">
             <div class="progreso" id="diversion">
-              <span id="funText">Diversión: 70%</span>
+              <span id="funText">Diversión: 60%</span>
             </div>
           </div>
-           <img src="./imgtamagochi/moneda.png" alt="" id="monedaImg"> <p id="cantidadMonedas">x20</p>
+          <img src="./imgtamagochi/moneda.png" alt="" id="monedaImg" />
+          <p id="cantidadMonedas">x20</p>
+        </div>
+
+        <!-- PANEL DE JUEGOS -->
+        <div id="panelJuegos">
+          <button class="pixel-btn" id="juegoReaccion">
+            Juego de Reacción
+          </button>
+          <button class="pixel-btn" id="juegoClics">Clic Rápido</button>
+          <button class="pixel-btn" id="juegoMemoria">Juego de Memoria</button>
         </div>
       </div>
-      <div id="fight"></div>
+
+      <!-- OTRAS SECCIONES -->
+      <div id="fight">
+        <div id="statsStrength">
+          <div class="barra" id="strengthBar">
+            <div class="progreso" id="strength">
+              <span id="strengthText">Level: 1</span>
+            </div>
+          </div>
+          <img src="./imgtamagochi/guanteBoxeo.png" alt=""><p id="numGolpes">x0</p>
+        </div>
+
+        <div id="panelControlFuerza">
+      
+            <img src="./imgtamagochi/punchingBag.png" alt="" id="sacoBoxeoIMG">
+  
+          <div id="botonesFuerza" >
+            <button id="Mejorar guante" class="pixel-btn">Mejorar guante</button>
+
+          </div>
+        </div>
+
+      </div>
       <div id="sleep"></div>
+
+      <!-- TAMAGOCHI CENTRAL -->
       <img
         id="tamagochi-gif"
         src="imgtamagochi/gifGatito.gif"
         alt="Tamagochi"
       />
     </div>
+
+    <!-- BARRA DE EXPERIENCIA -->
     <div class="barra" id="xpBar">
       <div class="progreso" id="xp"></div>
     </div>
-     <script src="tamagochi.js"></script>
+
+    <!-- ZONA DEL MINIJUEGO (oculta al inicio) -->
+    <div id="zonaMinijuego" class="oculto">
+      <h3 id="tituloMinijuego"></h3>
+      <div id="contenedorMinijuego"></div>
+      <button class="pixel-btn" id="volverTamagochi">Volver</button>
+    </div>
+
+    <script src="tamagochi.js"></script>
   </body>
 </html>

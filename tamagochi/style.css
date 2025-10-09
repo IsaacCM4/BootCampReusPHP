@@ -87,7 +87,7 @@ body {
 
 /*Campo de zanahoria y controles*/
 #foodBar {
-  width: 100%;
+  width: 40%;
   text-align: center;   
   top: 50%;
   margin-left: 10px;
@@ -200,10 +200,22 @@ body {
   background-color: #a56623;
 }
 
+
+/*Para descontar/ añadir zanahorias, monedas , regadoras*/
+.parpadeo-verde {
+  color: #037703 !important; /* verde brillante */
+  transition: color 0.3s;
+}
+
+.parpadeo-rojo {
+  color: #ff0000 !important; /* rojo brillante */
+  transition: color 0.3s;
+}
+
 /*Campo de juegos*/
 
 #funBar {
-   width: 100%;
+   width: 40%;
   text-align: center;   
   top: 50%;
   margin-left: 10px;
@@ -215,7 +227,7 @@ body {
 }
 
 #diversion {
-  width: 0%; 
+  width: 60%; 
   height: 100%;
   background-color: rgb(93, 237, 93);
   transition: width 0.3s;
@@ -255,4 +267,166 @@ body {
 
 #cantidadMonedas{
     margin-right: 10px;
+}
+
+#panelJuegos{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ----- ZONA DE MINIJUEGOS ----- */
+.oculto {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+
+#zonaMinijuego {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  color: white;
+}
+
+#contenedorMinijuego {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: #222;
+  border: 4px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.objetivo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(93, 237, 93);
+  position: absolute;
+  cursor: pointer;
+}
+
+/*Memori cartas*/
+.tarjeta {
+  width: 80px;
+  height: 80px;
+  perspective: 600px; /* perspectiva para 3D */
+}
+
+.tarjeta-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.tarjeta.volteada .tarjeta-inner {
+  transform: rotateY(180deg);
+}
+
+.tarjeta-front,
+.tarjeta-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.tarjeta-front {
+  background-color: #555; /* lado oculto */
+}
+
+.tarjeta-back {
+  background-color: red; /* cambia luego dinámicamente */
+  transform: rotateY(180deg);
+}
+
+/*CSS para lo de fuerza*/
+
+#statsStrength{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  img{
+    width: 7%;
+    margin-top: 5px;
+    margin-left: 5%;
+  }
+}
+#strengthBar {
+   width: 40%;
+  text-align: center;   
+  top: 50%;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: auto;
+  pointer-events: none;
+  font-weight: bold;
+  color: #000;
+}
+
+#sacoBoxeoIMG{
+  width: 40%;
+}
+
+#strengthText{
+    position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: none; 
+}
+
+#panelControlFuerza{
+  display: flex;
+  align-items: center;
+  gap: 100px; 
+
+}
+
+#botonesFuerza{
+  width: 60%;
+}
+
+.golpe {
+  animation: golpeAnim 0.2s;
+}
+
+@keyframes golpeAnim {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-5deg); }
+  50% { transform: translateY(5px) rotate(5deg); }
+  75% { transform: translateY(-3px) rotate(-3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
