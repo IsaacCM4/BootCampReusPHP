@@ -38,7 +38,7 @@ body {
   background-color: rgb(236, 91, 91);
 }
 
-#sleep {
+#room {
   width: 50%;
   height: 50%;
   background-color: rgb(55, 192, 210);
@@ -253,13 +253,15 @@ body {
   text-transform: uppercase;
   pointer-events: none; 
 }
-#statsFun{
+#statsFun {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 20%;
-  gap: 20px;
+  flex-direction: row-reverse;
+  justify-content: flex-start; 
   align-items: center;
+  gap: 20px;
+  height: 25px;
+  margin-top: 10px;
+  margin-right: 10px; 
 }
 #monedaImg{
     width: 5%;
@@ -270,6 +272,7 @@ body {
 }
 
 #panelJuegos{
+  margin: 5%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -367,28 +370,46 @@ body {
 
 /*CSS para lo de fuerza*/
 
-#statsStrength{
+#statsStrength {
   display: flex;
   align-items: center;
   flex-direction: row;
-  img{
-    width: 7%;
-    margin-top: 5px;
-    margin-left: 5%;
-  }
-}
-#strengthBar {
-   width: 40%;
-  text-align: center;   
-  top: 50%;
-  margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: auto;
-  pointer-events: none;
-  font-weight: bold;
-  color: #000;
 }
 
+#statsStrength img {
+  width: 7%;
+  margin-top: 5px;
+  margin-left: 5%;
+}
+
+/* --- Contenedor de la barra --- */
+#strengthBar {
+  width: 40%;
+  height: 25px;
+  background-color: #222; 
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #000;
+  position: relative; 
+  text-align: center;
+  margin-left: 15px;
+}
+
+
+#strength {
+  width: 0%;
+  height: 100%;
+  background-color: rgb(93, 237, 93); 
+  transition: width 0.3s;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
 #sacoBoxeoIMG{
   width: 40%;
 }
@@ -429,4 +450,102 @@ body {
   50% { transform: translateY(5px) rotate(5deg); }
   75% { transform: translateY(-3px) rotate(-3deg); }
   100% { transform: translateY(0) rotate(0deg); }
+}
+
+.subida-nivel {
+  box-shadow: 0 0 15px #7efc7e;
+  transition: box-shadow 0.3s ease;
+}
+
+/*Zona dormitorio*/
+#statsEnergy {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+  height: 25px;
+  margin: 10px 0;
+  margin-right: 15px;
+}
+
+/* Contenedor de la barra */
+#energyBar {
+  width: 40%; /* igual que otras barras */
+  height: 25px;
+  background-color: #222; /* fondo oscuro */
+  border: 3px solid black; /* borde negro */
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #000; /* sombra */
+  position: relative; 
+}
+
+/* Barra de progreso */
+#energy {
+  width: 60%; /* porcentaje inicial */
+  height: 100%;
+  background-color: rgb(93, 237, 93); /* verde */
+  transition: width 0.3s ease; /* transición suave */
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Texto centrado */
+#energyText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: none; /* no interfiere con clicks */
+}
+
+/*Zona dormitorio*/
+#lampara{
+  width: 20%;
+}
+#overlay {
+  position: fixed; /* cubre toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7); /* oscuridad */
+  pointer-events: none; /* deja pasar clicks al contenido */
+  opacity: 0; /* invisible por defecto */
+  transition: opacity 0.5s; /* suaviza la transición */
+  z-index: 1000; /* encima de todo */
+}
+
+/* Clase activa */
+#overlay.activo {
+  opacity: 1;
+}
+#lampara.on{
+ 
+ box-shadow: 
+      0 0 30px 40px rgba(255, 255, 200, 0.6),   /* capa exterior más difusa */
+      0 0 60px 80px rgba(255, 255, 200, 0.4),
+      0 0 100px 120px rgba(255, 255, 180, 0.2); /* capa más amplia y tenue */
+
+  /* Animación de parpadeo suave */
+  animation: lamp-glow 2s infinite alternate;
+
+  /* Luz centrada */
+  transform-origin: center center;
+
+  /* Hacer el halo circular */
+  border-radius: 50%;
 }
