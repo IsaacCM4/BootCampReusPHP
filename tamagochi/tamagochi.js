@@ -40,7 +40,12 @@ let golpesNecesarios = 10;
 //Elementos zona dormitorio
 const lampara = document.getElementById("lampara");
 const overlay = document.getElementById("overlay");
+const energyBar = document.getElementById("energy");
+const energyText = document.getElementById("energyText");
+const btnLampara = document.getElementById("btn-lampara");
 
+let energy = parseInt(energyBar.style.width) || 60; 
+let intervalId = null;
 // --------------------
 // Variables iniciales
 // --------------------
@@ -254,6 +259,7 @@ volverTamagochi.addEventListener("click", cerrarMinijuego);
 document.getElementById("juegoReaccion").addEventListener("click", () => {
   abrirMinijuego("Juego de Reacción", iniciarJuegoReaccion);
   overlay.classList.remove("activo");
+   lampara.classList.toggle("on");
 });
 
 function iniciarJuegoReaccion() {
@@ -359,6 +365,7 @@ function iniciarJuegoReaccion() {
 btnJuegoClickRapido.addEventListener("click", () => {
   abrirMinijuego("Clic Rápido", iniciarJuegoClics);
   overlay.classList.remove("activo");
+   lampara.classList.toggle("on");
 });
 
 //Volver a pantalla incial
@@ -435,6 +442,7 @@ function iniciarJuegoClics() {
 //Juego de memoria
 btnJuegoMemoria.addEventListener("click", () => {
   overlay.classList.remove("activo");
+   lampara.classList.toggle("on");
   abrirMinijuego("Juego de Memoria", iniciarJuegoMemoria);
 });
 
@@ -715,6 +723,36 @@ btnMejorarGuante.addEventListener("click", () => {
 
 //Zona dormitorio
 lampara.addEventListener("click", () => {
-overlay.classList.toggle("activo");
-lampara.classList.toggle("on")
+  overlay.classList.toggle("activo");
+  lampara.classList.toggle("on");
+
+  if (lampara.classList.contains("on")) {
+    startEnergyFill();
+  } else {
+    stopEnergyFill();
+  }
 });
+
+function startEnergyFill() {
+  if (intervalId) return; 
+  intervalId = setInterval(() => {
+    if (energy < 100) {
+      energy += 1; 
+      updateEnergyBar();
+    } else {
+      stopEnergyFill();
+    }
+  }, 1000);
+}
+
+function stopEnergyFill() {
+  clearInterval(intervalId);
+  intervalId = null;
+}
+
+function updateEnergyBar() {
+  energyBar.style.width = energy + "%";
+  energyText.textContent = `Energy: ${energy}%`;
+}
+
+

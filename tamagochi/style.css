@@ -513,9 +513,7 @@ body {
 }
 
 /*Zona dormitorio*/
-#lampara{
-  width: 20%;
-}
+
 #overlay {
   position: fixed; /* cubre toda la pantalla */
   top: 0;
@@ -548,4 +546,39 @@ body {
 
   /* Hacer el halo circular */
   border-radius: 50%;
+}
+
+#panelDormitorio{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  
+}
+
+#armario{
+  width: 20%;
+}
+#lampara{
+  width: 20%;
+  height: 10%;
+}
+#divLampara{
+  width: 50%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+ margin-top: 50px;
+  gap: 20px;
+}
+
+#divArmario{
+ width: 50%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 20px;
 }
