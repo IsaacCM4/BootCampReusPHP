@@ -42,13 +42,12 @@ const lampara = document.getElementById("lampara");
 const overlay = document.getElementById("overlay");
 const energyBar = document.getElementById("energy");
 const energyText = document.getElementById("energyText");
-const btnLampara = document.getElementById("btn-lampara");
 
 let energy = parseInt(energyBar.style.width) || 60; 
 let intervalId = null;
-// --------------------
+
 // Variables iniciales
-// --------------------
+
 let cantidadRegadoras = parseInt(cantidadRegadorasElem.textContent.replace("x", ""));
 let cantidadZanahorias = parseInt(cantidadZanahoriasElem.textContent.replace("x", ""));
 let nivelDeHambre = parseInt(nivelDeHambreElem.textContent.replace("Hambre:", "").replace("%", "").trim());
@@ -57,9 +56,9 @@ let nivelDeDiversion = parseInt(nivelDeDiversionElem.textContent.replace("Divers
 let cantidadGolpes = parseInt(numGolpes.textContent.replace("x", ""));
 let regadas = false;
 
-// --------------------
+
 // Función para actualizar barra y texto de hambre
-// --------------------
+
 function actualizarHambre() {
   if (nivelDeHambre > 100) nivelDeHambre = 100;
   if (nivelDeHambre < 0) nivelDeHambre = 0;
@@ -67,13 +66,40 @@ function actualizarHambre() {
   nivelDeHambreElem.textContent = "Hambre: " + nivelDeHambre + "%";
   barraComida.style.width = nivelDeHambre + "%";
 }
+iniciarDecremento();
 
+function iniciarDecremento() {
+    setInterval(() => {
+     
+        if (nivelDeHambre > 0) {
+            nivelDeHambre -= 1;
+            actualizarHambre();
+        }
 
-// Inicializamos la barra al cargar
+      
+        if (nivelDeDiversion > 0) {
+            nivelDeDiversion -= 1;
+            calcularDiversion();
+        }
+
+       
+        if (!lampara.classList.contains('on') && energy > 0) {
+            energy -= 1;
+            updateEnergyBar();
+        }
+
+        
+        nivelDeHambreElem.classList.toggle("parpadeo-rojo", nivelDeHambre <= 20);
+        nivelDeDiversionElem.classList.toggle("parpadeo-rojo", nivelDeDiversion <= 20);
+        energyText.classList.toggle("parpadeo-rojo", energy <= 20);
+
+    }, 5000); 
+}
+
 actualizarHambre();
 
 
-// Botón regar
+
 
 btnRegar.addEventListener("click", () => {
   if (cantidadRegadoras > 0 && !regadas) {
@@ -162,9 +188,9 @@ btnComprarRegadoras.addEventListener("click", () =>{
 });
 
 
-// -------------------------
+
 // SISTEMA DE MINIJUEGOS
-// -------------------------
+
 const zonaMinijuego = document.getElementById("zonaMinijuego");
 const contenedorMinijuego = document.getElementById("contenedorMinijuego");
 const tituloMinijuego = document.getElementById("tituloMinijuego");
@@ -181,7 +207,7 @@ function abrirMinijuego(nombre, callback) {
 
   // Limpiamos contenido y estilos previos
   contenedorMinijuego.innerHTML = "";
-  contenedorMinijuego.style.display = "flex";       // Estado base
+  contenedorMinijuego.style.display = "flex";       
   contenedorMinijuego.style.flexDirection = "column";
   contenedorMinijuego.style.alignItems = "center";
   contenedorMinijuego.style.justifyContent = "center";
@@ -206,7 +232,7 @@ function cerrarMinijuego() {
 
   // Limpiamos contenido y estilos
   contenedorMinijuego.innerHTML = "";
-  contenedorMinijuego.style = ""; // Resetea todos los estilos inline
+  contenedorMinijuego.style = ""; 
 
   // Ocultamos panel
   zonaMinijuego.classList.add("oculto");
@@ -217,7 +243,7 @@ function cerrarMinijuego() {
     intervaloClicRapido = null;
   }
 
-  // Aquí podrías limpiar otros intervalos de otros juegos si los tienes
+  
 }
 
 function calcularDiversion() {
@@ -250,22 +276,26 @@ function abrirMinijuego(nombre, callback) {
 
 
 
+
+
 // Botón volver
 volverTamagochi.addEventListener("click", cerrarMinijuego);
 
-// -------------------------
+
 // MINIJUEGO: Reacción
-// -------------------------
+
 document.getElementById("juegoReaccion").addEventListener("click", () => {
   abrirMinijuego("Juego de Reacción", iniciarJuegoReaccion);
   overlay.classList.remove("activo");
-   lampara.classList.toggle("on");
+    if (lampara.classList.contains('on')) {
+    lampara.classList.remove('on');
+  }
 });
 
 function iniciarJuegoReaccion() {
   
   let inicioTiempo, finTiempo;
-  const tiempoAleatorio = Math.random() * 3000 + 1000; // entre 1 y 4 seg
+  const tiempoAleatorio = Math.random() * 3000 + 1000; 
 
   const mensaje = document.createElement("p");
   mensaje.textContent = "Espera a que aparezca el círculo verde...";
@@ -365,7 +395,9 @@ function iniciarJuegoReaccion() {
 btnJuegoClickRapido.addEventListener("click", () => {
   abrirMinijuego("Clic Rápido", iniciarJuegoClics);
   overlay.classList.remove("activo");
-   lampara.classList.toggle("on");
+     if (lampara.classList.contains('on')) {
+    lampara.classList.remove('on');
+  }
 });
 
 //Volver a pantalla incial
@@ -442,7 +474,9 @@ function iniciarJuegoClics() {
 //Juego de memoria
 btnJuegoMemoria.addEventListener("click", () => {
   overlay.classList.remove("activo");
-   lampara.classList.toggle("on");
+     if (lampara.classList.contains('on')) {
+    lampara.classList.remove('on');
+  }
   abrirMinijuego("Juego de Memoria", iniciarJuegoMemoria);
 });
 
@@ -572,12 +606,12 @@ sacoDeBoxeo.addEventListener("click", () => {
 
   progresoStrength += nivelStrength*(1.5);
 
-  // Si llega o supera los golpes necesarios → subir de nivel
+  // Si llega o supera los golpes necesarios 
   if (progresoStrength >= golpesNecesarios) {
     nivelStrength++;
     progresoStrength = 0; // reiniciar progreso
 
-    // Aumentar la dificultad (más golpes por nivel)
+    // Aumentar la dificultad
     golpesNecesarios = Math.floor(golpesNecesarios * 1.5);
 
     // Efecto visual al subir de nivel
@@ -613,7 +647,7 @@ sacoDeBoxeo.addEventListener("click", () => {
 
 
 
-// --- Sistema de mejora de guantes ---
+//  Sistema de mejora de guantes 
 btnMejorarGuante.addEventListener("click", () => {
   // Calculamos el precio según el nivel actual
   let precioMejora = 0;
@@ -660,7 +694,6 @@ btnMejorarGuante.addEventListener("click", () => {
   contenedorMinijuego.style.alignItems = "center";
   contenedorMinijuego.style.justifyContent = "center";
 
-  // --- Botón “Sí” ---
   document.getElementById("confirmarMejora").addEventListener("click", () => {
     if (cantidadMonedas >= precioMejora) {
       cantidadMonedas -= precioMejora;
@@ -717,7 +750,7 @@ btnMejorarGuante.addEventListener("click", () => {
     }
   });
 
-  // --- Botón “No” ---
+
   document.getElementById("cancelarMejora").addEventListener("click", cerrarMinijuego);
 });
 

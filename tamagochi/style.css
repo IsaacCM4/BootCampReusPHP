@@ -181,8 +181,8 @@ body {
   width: 30%;
   font-size: 10px;
   color: #fff;
-  background-color: #c97c2e; /* color tierra/naranja */
-  border: 4px solid #7b4b1f; /* borde marrón oscuro */
+  background-color: #c97c2e; 
+  border: 4px solid #7b4b1f; 
   padding: 12px 16px;
   text-transform: uppercase;
   cursor: pointer;
@@ -196,19 +196,19 @@ body {
 
 .pixel-btn:active {
   box-shadow: 0 2px 0 #7b4b1f, 0 0 0 4px #7b4b1f, 0 0 0 8px #3d2813;
-  transform: translateY(2px); /* efecto de pulsar */
+  transform: translateY(2px); 
   background-color: #a56623;
 }
 
 
 /*Para descontar/ añadir zanahorias, monedas , regadoras*/
 .parpadeo-verde {
-  color: #037703 !important; /* verde brillante */
+  color: #037703 !important; 
   transition: color 0.3s;
 }
 
 .parpadeo-rojo {
-  color: #ff0000 !important; /* rojo brillante */
+  color: #ff0000 !important; 
   transition: color 0.3s;
 }
 
@@ -364,7 +364,7 @@ body {
 }
 
 .tarjeta-back {
-  background-color: red; /* cambia luego dinámicamente */
+  background-color: red; 
   transform: rotateY(180deg);
 }
 
@@ -471,22 +471,22 @@ body {
 
 /* Contenedor de la barra */
 #energyBar {
-  width: 40%; /* igual que otras barras */
+  width: 40%; 
   height: 25px;
-  background-color: #222; /* fondo oscuro */
-  border: 3px solid black; /* borde negro */
+  background-color: #222; 
+  border: 3px solid black; 
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 0 5px #000; /* sombra */
+  box-shadow: 0 0 5px #000; 
   position: relative; 
 }
 
 /* Barra de progreso */
 #energy {
-  width: 60%; /* porcentaje inicial */
+  width: 60%;
   height: 100%;
-  background-color: rgb(93, 237, 93); /* verde */
-  transition: width 0.3s ease; /* transición suave */
+  background-color: rgb(93, 237, 93); 
+  transition: width 0.3s ease; 
   border-radius: 5px 0 0 5px;
   display: flex;
   align-items: center;
@@ -509,22 +509,22 @@ body {
   color: white;
   font-weight: bold;
   text-transform: uppercase;
-  pointer-events: none; /* no interfiere con clicks */
+  pointer-events: none;
 }
 
 /*Zona dormitorio*/
 
 #overlay {
-  position: fixed; /* cubre toda la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7); /* oscuridad */
-  pointer-events: none; /* deja pasar clicks al contenido */
-  opacity: 0; /* invisible por defecto */
-  transition: opacity 0.5s; /* suaviza la transición */
-  z-index: 1000; /* encima de todo */
+  background-color: rgba(0,0,0,0.7); 
+  pointer-events: none; 
+  opacity: 0; 
+  transition: opacity 0.5s;
+  z-index: 1000; 
 }
 
 /* Clase activa */
@@ -544,41 +544,23 @@ body {
   /* Luz centrada */
   transform-origin: center center;
 
-  /* Hacer el halo circular */
+
   border-radius: 50%;
 }
 
 #panelDormitorio{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+   display: flex;
+  justify-content: center; 
+  align-items: center;     
+  position: relative;      
   width: 100%;
+  height: 100%;
   
 }
 
-#armario{
-  width: 20%;
-}
 #lampara{
-  width: 20%;
-  height: 10%;
-}
-#divLampara{
-  width: 50%;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  flex-direction: column;
- margin-top: 50px;
-  gap: 20px;
-}
+   width: 80px;
+  height: 80px;
+  cursor: pointer;
 
-#divArmario{
- width: 50%;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-  gap: 20px;
 }
