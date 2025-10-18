@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #b5d692;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: none;
+}
+
+.calculator {
+  background-color: #232c43;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  color: #ddd;
+}
+
+.theme-switch {
+  position: relative;
+  background-color: #1e2433;
+  border-radius: 10px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+}
+
+.theme-switch span {
+  font-size: 8px;
+  color: #aaa;
+}
+
+.dot {
+  position: absolute;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #d13f30;
+  border-radius: 50%;
+}
+
+.display {
+  background-color: #181f32;
+  color: white;
+  font-size: 28px;
+  text-align: right;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  background-color: #eae3dc;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px #b4a597;
+  transition: all 0.1s;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px #b4a597;
+}
+
+button.del {
+  background-color: #647299;
+  color: white;
+}
+
+button.reset {
+  grid-column: span 2;
+  background-color: #647299;
+  color: white;
+}
+
+button.equal {
+  grid-column: span 2;
+  background-color: #d13f30;
+  color: white;
+}
