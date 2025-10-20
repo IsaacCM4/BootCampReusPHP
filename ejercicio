@@ -1,0 +1,16 @@
+Ejercicio
+
+Siguiendo los pasos que hemos definido anteriormente haz lo siguiente:
+
+Realiza una compilación de un fichero de TypeScript.
+
+Crea un fichero de configuración tsconfig.json.
+
+Configura la propiedad del fichero tsconfig.json que nos permitirá que el compilado se genere en un directorio en específico llamado outputFilesJS.
+
+Configura el directorio en el cual se buscarán los ficheros de TypeScript (rootDir) para que sea el directorio definido con el nombre inputFilesTS.
+
+Haz que la versión de salida del fichero sea ES5 y define una variable con var en el interior del fichero. ¿Qué está pasando? Explícalo.
+
+--------------------------------------------------------------------------
+
