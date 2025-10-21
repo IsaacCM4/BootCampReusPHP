@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#!" id="btnAddPokemon">Add Pokemon</a></li>
+      <li><a href="#!" id="btnDeletePokemon">Delete Pokemon</a></li>
+      <li><a href="#!" id="btnUpdatePokemon">Update Pokemon</a></li>
+    </ul>
+
+    <a href="#" data-target="slide-out" class="sidenav-trigger">
+      <button class="btn-floating" id="btn-Menu">Menu</button>
+    </a>
+
+    <h1 class="titulo-principal center-align">Pokedex by Isaac Cabré Muñoz</h1>
+
+    <div class="buscador-container">
+      <input 
+        type="text" 
+        id="busquedaPokemon" 
+        placeholder="Buscar Pokémon..."
+        autocomplete="off"
+      >
+      <ul id="sugerencias" class="sugerencias"></ul>
+    </div>
+
+    <div id="contenedor-pokemon" class="contenedor-pokemon"></div>
+
+    <div class="paginacion center-align" style="margin: 20px;">
+      <button id="btn-anterior" class="btn">Anterior</button>
+      <button id="btn-siguiente" class="btn">Siguiente</button>
+    </div>
+
+    <!--Añadir pokemon-->
+    <div id="add-pokemon-container" class="container" style="display:none; margin-top: 30px;">
+      <h4>Agregar Pokémon</h4>
+      <form id="formAddPokemon">
+        <div class="input-field">
+          <input id="nombrePokemon" type="text" required>
+          <label for="nombrePokemon">Nombre del Pokémon</label>
+        </div>
+
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Seleccionar Imagen</span>
+            <input type="file" id="imagenPokemon" accept="image/*" required>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Selecciona una imagen">
+          </div>
+        </div>
+
+        <div class="input-field">
+          <input id="tiposPokemon" type="text" required>
+          <label for="tiposPokemon">Tipos (separados por comas)</label>
+        </div>
+
+        <button class="btn" type="submit">Agregar Pokémon</button>
+      </form>
+    </div>
+
+    <div id="delete-pokemon-container" class="container" style="display:none; margin-top: 30px;">
+      <h4>Eliminar Pokémon</h4>
+      <input type="text" id="deleteBusqueda" placeholder="Buscar Pokémon para eliminar..." autocomplete="off">
+      <ul id="deleteSugerencias" class="sugerencias"></ul>
+      <div id="deleteContenedor" class="contenedor-pokemon" style="margin-top:20px;"></div>
+    </div>
+
+    <!--Actualizar Pokémon-->
+    <div id="update-pokemon-container" class="container" style="display:none; margin-top: 30px;">
+      <h4>Actualizar Pokémon</h4>
+      <input type="text" id="updateBusqueda" placeholder="Buscar Pokémon para actualizar..." autocomplete="off">
+      <ul id="updateSugerencias" class="sugerencias"></ul>
+      <div id="updateFormContainer" style="margin-top: 20px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
