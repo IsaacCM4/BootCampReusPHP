@@ -4,4 +4,3 @@ SELECT region AS ciudad, country AS pais, postalZip AS codigo_postal FROM myTabl
     FROM myTable
     WHERE country IN ('Germany', 'Turkey')
 );
-
