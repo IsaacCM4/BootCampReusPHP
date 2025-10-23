@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS CiudadesDB;
+USE CiudadesDB;
+
+CREATE TABLE Country (
+    country_id int PRIMARY KEY AUTO_INCREMENT,
+    country VARCHAR(50),
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE City (
+    city_id INT PRIMARY KEY AUTO_INCREMENT,
+    city VARCHAR(50),
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    country_id INT,
+    FOREIGN KEY (country_id) REFERENCES Country(country_id)
+);
+
+CREATE TABLE Address (
+    address_id INT PRIMARY KEY AUTO_INCREMENT,
+    address VARCHAR(50),
+    address2 VARCHAR(50),
+    district VARCHAR(20),
+    postal_code VARCHAR(10),
+    phone VARCHAR(20),
+    location VARCHAR(20),
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    city_id INT,
+    FOREIGN KEY (city_id) REFERENCES City(city_id)
+);
+
