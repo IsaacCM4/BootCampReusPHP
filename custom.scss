@@ -1,0 +1,30 @@
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 250px,
+  md: 500px,
+  lg: 750px,
+  xl: 1000px,
+  xxl: 1250px
+);
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+.caja {
+  height: 200px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+
+  @include media-breakpoint-down(md) {
+    background-color: violet;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-color: green;
+  }
+}
